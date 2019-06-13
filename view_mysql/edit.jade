@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        div(align='center')
+            <img src='/factory.gif' height='300' width='300' alt='Factory Icon'>
+        h1(style='text-align:center;')
+            a(href='/ahnfactory' style='color:Darkblue; text-decoration:none; font-family:Comic Sans Ms' ) AhnFactory
+        ul(style='text-align:center; list-style-type:none;')
+            each ahnfactory in factorys
+                li
+                    a(href='/ahnfactory/'+ ahnfactory.id style='color:black; padding-right: 40px; ')= ahnfactory.title
+        article(style='text-align:center; font-family:Arial Black; color:white; background-color:gray; padding:20px; ')
+            form(action='/ahnfactory/'+ahnfactory.id+'/edit' method='post')
+                P
+                    dev(style='background-color:black; color: white') 정보명
+                    input(type='text' name='title' value=ahnfactory.title placeholder='name' style='outline: 1px solid black;')
+                P
+                    dev(style='background-color:black; color: white') 설명
+                    textarea(name='description' style='outline: 1px solid black;' placeholder='description')
+                        =ahnfactory.description
+                P
+                    dev(style='background-color:black; color: white') 글쓴이
+                    input(type='text' name='author' value=ahnfactory.author placeholder='author' style='outline: 1px solid black;')
+                P
+                    input(type='submit' onclick="alert('수정되었습니다!')" )
+        ul(style='text-align:center;list-style-type:none; padding-right: 40px; ')
+            li
+                a(href='/ahnfactory/add' style='color:black; text-align:center; font-weight:bold') 지식추가하기

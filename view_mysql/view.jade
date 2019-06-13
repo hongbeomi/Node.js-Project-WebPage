@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title AhnFactory
+        link(rel="SHORTCUT ICON" href="/AF1.ico")
+        meta(charset='utf-8')
+    body
+        div(align='center')
+            <img src='/factory.gif' height='300' width='300' alt='Factory Icon'>
+        h1(style='text-align:center;')
+            a(href='/ahnfactory' style='color:Darkblue; text-decoration:none; font-family:Comic Sans Ms' ) AhnFactory
+        ul(style='text-align:center; list-style-type:none;')
+            each ahnfactory in factorys
+                li
+                    a(href='/ahnfactory/'+ ahnfactory.id style='color:black; padding-right: 40px; ')= ahnfactory.title
+        article(style='text-align:center; font-family:Arial Black; color:white; background-color:gray; padding:20px; ')
+            if ahnfactory
+                h1= ahnfactory.title
+                h4(style='text-align:center; font-family:Arial Black; color:black; background-color:white; padding:0px auto 0px auto; ')
+                    =ahnfactory.description
+                div= 'by '+ahnfactory.author
+            else
+                h2 Welcome
+                | This is server side AhnFactory.
+        ul(style='text-align:center;list-style-type:none; padding-right: 40px;')
+            li
+                a(href='/ahnfactory/add' style='color:black; text-align:center; font-weight:bold') 지식추가하기
+            if ahnfactory
+                li
+                    a(href='/ahnfactory/'+ahnfactory.id+'/edit' style='color:black; font-weight:bold') 수정하기
+                li
+                    a(href='/ahnfactory/' + ahnfactory.id + '/delete' style='color:black; font-weight:bold') 삭제하기

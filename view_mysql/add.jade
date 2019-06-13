@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        div(align='center')
+            <img src='/factory.gif' height='300' width='300' alt='Factory Icon'>
+        h1(style='text-align:center;')
+            a(href='/ahnfactory' style='color:Darkblue; text-decoration:none; font-family:Comic Sans Ms') AhnFactory
+        ul(style='text-align:center; list-style-type:none; ' )
+            each ahnfactory in factorys
+                li
+                    a(href='/ahnfactory/' style='padding-right: 40px;  color:black;'+ ahnfactory.id)= ahnfactory.title
+        article(style='text-align:center;')
+            form(action='/ahnfactory/add' method='post')
+                P
+                    dev(style='background-color:black; color: white') 정보명
+                    input(type='text' name='title' placeholder='name' style='outline: 1px solid black;')
+                P
+                    dev(style='background-color:black; color: white') 설명
+                    textarea(name='description' style='outline: 1px solid black;' placeholder='description')
+                P
+                    dev(style='background-color:black; color: white') 글쓴이
+                    input(type='text' name='author' placeholder='author' style='outline: 1px solid black;')
+                P
+                    input(type='submit' onclick="alert('저장되었습니다!')")

@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        div(align='center')
+            <img src='/factory.gif' height='300' width='300' alt='Factory Icon'>
+        h1(style='text-align:center;')
+            a(href='/ahnfactory' style='color:Darkblue; text-decoration:none; font-family:Comic Sans Ms') AhnFactory
+        ul(style='text-align:center; list-style-type:none; ' )
+            each ahnfactory in factorys
+                li
+                    a(href='/ahnfactory/' style='padding-right: 40px;  color:black;'+ ahnfactory.id)= ahnfactory.title
+        article(style='text-align:center;')
+            h1= ahnfactory.title+'파일을 삭제하시겠습니까? '
+            form(action='/ahnfactory/'+ahnfactory.id+'/delete' method='post')
+                Ps
+                    input(type='submit' style='padding:0 19px 0 19px' onclick="alert('삭제되었습니다!')" value='예')
+            button(onclick="location.href='/ahnfactory/'") 아니오
