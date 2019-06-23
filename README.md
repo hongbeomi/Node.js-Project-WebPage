@@ -1,7 +1,7 @@
 # Node.js 프로젝트
 > Node.js를 기반으로 자신만의 웹페이지를 만들어보는 프로젝트입니다.
 
-![Node.js](https://img.shields.io/badge/Node.js-6.9.0-yellow.svg?style=flat-square&logo=node.js) 
+![GitHub top language](https://img.shields.io/github/languages/top/hongbeomi/Node.js-Project-WebPage.svg?color=red) ![npm](https://img.shields.io/npm/v/package.json.svg)  
 
 ## What?
 
